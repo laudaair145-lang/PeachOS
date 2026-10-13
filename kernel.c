@@ -487,7 +487,6 @@ void execute_command(char* cmd) {
 
     if (strncmp(base_cmd, "explorer", 8) == 0) app_explorer();
     else if (strncmp(base_cmd, "edit", 4) == 0) app_editor(get_arg(cmd, 1));
-    else if (strncmp(base_cmd, "sysmon", 6) == 0 || strncmp(base_cmd, "top", 3) == 0) app_sysmon();
     else if (strncmp(base_cmd, "diskutil", 8) == 0) app_diskutil();
     else if (strncmp(base_cmd, "matrix", 6) == 0) app_matrix();
     else if (strncmp(base_cmd, "bf", 2) == 0) app_bf(get_arg(cmd, 1));
@@ -536,7 +535,7 @@ void execute_command(char* cmd) {
     else if (strncmp(base_cmd, "clear", 5) == 0) clear_screen();
     else if (strncmp(base_cmd, "reboot", 6) == 0) { outb(0x64, 0xFE); while(1) { __asm__ volatile ("hlt"); } }
     else if (strncmp(base_cmd, "help", 4) == 0) {
-        print("System : help, clear, reboot, sysmon, diskutil, peachfetch, startgui\n");
+        print("System : help, clear, reboot, diskutil, peachfetch, startgui\n");
         print("Disk   : diskinfo, fsinfo, savefs, hexview, install\n");
         print("Files  : explorer, edit <file>, ls, mkdir, cd, rm\n");
         print("Apps   : matrix, bf <file>, echo\n");
